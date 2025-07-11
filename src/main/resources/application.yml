@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: pandarunner
+  data:
+    redis:
+      port: 6379
+      host: localhost
+  datasource:
+    druid:
+      validation-query: SELECT 1
+      initial-size: 10
+      min-idle: 10
+      max-active: 100
+      min-evictable-idle-time-millis: 300000
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 30000
+      max-open-prepared-statements: 50
+      pool-prepared-statements: true
+      maxWait: 30000
+      connectTimeout: 30000
+      socketTimeout: 30000
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url:  jdbc:postgresql://localhost:5432/pandarunner
+    username: postgres
+    password: 1234
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+sa-token:
+  active-timeout: -1
+  is-concurrent: false
+  is-color-log: true
+  is-log: true
+  is-read-cookie: false
+  jwt-secret-key: Y2FmYWZzZmtqamh6aWZhZndlZg==
+  token-name: Authorization
+  token-prefix: Bearer
+  timeout: -1
+mybatis-flex:
+  global-config:
+    deleted-value-of-logic-delete: true
+    normal-value-of-logic-delete: false
