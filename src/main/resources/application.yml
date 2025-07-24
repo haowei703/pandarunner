@@ -30,6 +30,10 @@ spring:
     password: 1234
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
 sa-token:
   active-timeout: -1
   is-concurrent: false
@@ -44,3 +48,8 @@ mybatis-flex:
   global-config:
     deleted-value-of-logic-delete: true
     normal-value-of-logic-delete: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 高德API配置
+api:
+  key: c8b33d7b0545eadc3e10f7de26d0359f
