@@ -1,0 +1,24 @@
+name: pandarunner
+services:
+  redis:
+    image: redis:7.2.5
+    container_name: pandarunner-redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - /data
+    command: redis-server
+    restart: always
+  postgres:
+    image: postgres:16.3
+    container_name: pandarunner-postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=pandarunner
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - TZ=Asia/Shanghai
+    restart: always
